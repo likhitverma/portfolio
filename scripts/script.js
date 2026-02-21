@@ -91,7 +91,10 @@ setTimeout(typeText, 500);
 // Counter animation
 function animateCounter(element) {
   const target = parseInt(element.getAttribute("data-target"));
-  const duration = 2000;
+  let duration = 2000;
+  if(element.classList.contains("fast-change")){
+     duration = 500;
+  }  
   const step = target / (duration / 16);
   let current = 0;
 
